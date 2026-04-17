@@ -17,7 +17,6 @@ export const SOLUTIONS = [
   {
     title: "Domestic Staffing",
     href: "/services/domestic",
-    description:
-      "Professional household workforce management with oversight and structure.",
+    description: "Professional household workforce management with oversight.",
   },
 ];
