@@ -23,7 +23,6 @@ export default function SignUpPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call to your backend
     setTimeout(() => {
       router.push("/login");
       setIsLoading(false);
@@ -68,7 +67,6 @@ export default function SignUpPage() {
               </div>
             </div>
 
-            {/* Email */}
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-widest text-otiz-slate ml-4">
                 Professional Email
@@ -84,7 +82,6 @@ export default function SignUpPage() {
               </div>
             </div>
 
-            {/* Account Type Selection - FIXED BOX */}
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-widest text-otiz-slate ml-4">
                 I am a...
@@ -93,8 +90,7 @@ export default function SignUpPage() {
                 <SelectTrigger className="h-14 rounded-full px-6 border-otiz-gray focus:ring-otiz-purple bg-white text-otiz-black">
                   <SelectValue placeholder="Select Account Type" />
                 </SelectTrigger>
-                {/* z-50 and bg-white are key here to prevent the jumbled look */}
-                <SelectContent className="rounded-2xl border-otiz-gray shadow-2xl bg-white z-[100]">
+                <SelectContent className="rounded-2xl border-otiz-gray shadow-2xl bg-white z-100">
                   <SelectItem
                     value="talent"
                     className="py-3 cursor-pointer focus:bg-otiz-purple/5"
@@ -111,7 +107,6 @@ export default function SignUpPage() {
               </Select>
             </div>
 
-            {/* Password */}
             <div className="space-y-2 pb-2">
               <label className="text-[10px] font-bold uppercase tracking-widest text-otiz-slate ml-4">
                 Secure Password

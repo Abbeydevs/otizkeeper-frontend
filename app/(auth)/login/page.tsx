@@ -15,15 +15,23 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulation
+
+    console.log("Login attempt started...");
+
+    document.cookie =
+      "token=mock_jwt_token; path=/; max-age=86400; SameSite=Lax";
+
+    console.log("Cookie set:", document.cookie);
+
     setTimeout(() => {
+      console.log("Redirecting to Talent Dashboard...");
+
       router.push("/talent/dashboard");
-      setIsLoading(false);
-    }, 1500);
+    }, 1200);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-otiz-gray/20">
       <motion.div
         className="w-full max-w-md"
         initial={{ opacity: 0, y: 20 }}
@@ -42,7 +50,6 @@ export default function LoginPage() {
         </div>
 
         <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-otiz-gray relative overflow-hidden">
-          {/* Subtle decorative accent */}
           <div className="absolute top-0 right-0 w-2 h-full bg-otiz-purple" />
 
           <form onSubmit={handleLogin} className="space-y-6">
@@ -85,6 +92,7 @@ export default function LoginPage() {
             </div>
 
             <Button
+              type="submit"
               disabled={isLoading}
               className="w-full h-14 rounded-full bg-otiz-black hover:bg-otiz-purple text-white font-bold transition-all active:scale-95 group"
             >
@@ -106,27 +114,6 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-        </div>
-
-        <div className="mt-8 flex justify-center gap-6">
-          <Link
-            href="/privacy"
-            className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-otiz-purple"
-          >
-            Privacy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-otiz-purple"
-          >
-            Terms
-          </Link>
-          <Link
-            href="/help"
-            className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-otiz-purple"
-          >
-            Help
-          </Link>
         </div>
       </motion.div>
     </div>
