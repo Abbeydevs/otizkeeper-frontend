@@ -5,7 +5,7 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const userRole = "talent";
+  const userRole = "employer";
 
   return (
     <div className="flex min-h-screen bg-otiz-gray/20">

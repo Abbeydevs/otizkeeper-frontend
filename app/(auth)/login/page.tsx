@@ -23,11 +23,15 @@ export default function LoginPage() {
 
     console.log("Cookie set:", document.cookie);
 
-    setTimeout(() => {
-      console.log("Redirecting to Talent Dashboard...");
+    const detectedRole = "employer";
 
-      router.push("/talent/dashboard");
-    }, 1200);
+    setTimeout(() => {
+      if (detectedRole === "employer") {
+        router.push("/employer/dashboard");
+      } else {
+        router.push("/talent/dashboard");
+      }
+    }, 1000);
   };
 
   return (
